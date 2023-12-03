@@ -58,3 +58,15 @@
 #flags-list li {
     cursor: pointer;
 }
+
+#buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#github-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+}
