@@ -54,6 +54,11 @@ window.onload = function() {
         countryName.textContent = mainFlag.alt;
     };
 
+    // Show country name when the text is clicked
+    countryName.onclick = function() {
+        countryName.textContent = mainFlag.alt;
+    };
+
     // Pick a random country to initialize the main page
     const randomIndex = Math.floor(Math.random() * flagsData.length);
     const randomFlag = flagsData[randomIndex];
