@@ -14,8 +14,14 @@
     flex-direction: column;
 }
 
+#randomize-button {
+    padding: 5px; /* Larger size for smaller screens */
+    font-size: 1.5em; /* Larger font size for smaller screens */
+}
+
+/* Styles for screens wider than 600px */
 @media screen and (min-width: 600px) {
-    /* Styles for screens wider than 600px */
+    
     #menu {
         width: 200px;
         height: 100%;
@@ -25,6 +31,11 @@
         margin-top: 0;
         margin-left: 200px;
         height: calc(100vh - 50px);
+    }
+
+    #randomize-button {
+        padding: 10px; /* Default size for larger screens */
+        font-size: 1em; /* Default font size for larger screens */
     }
 }
 
