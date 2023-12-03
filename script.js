@@ -1,8 +1,10 @@
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
+    let shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
+    return shuffled;
 }
 
 window.onload = function() {
@@ -12,14 +14,14 @@ window.onload = function() {
     const countryName = document.getElementById('country-name');
     const randomizeButton = document.getElementById('randomize-button');
 
-    function addFlagsToMenu() {
+    function addFlagsToMenu(flags) {
         // Remove all existing flags from the menu
         while (flagsList.firstChild) {
             flagsList.removeChild(flagsList.firstChild);
         }
 
         // Add flags to the menu
-        flagsData.forEach(flag => {
+        flags.forEach(flag => {
             const li = document.createElement('li');
             const img = document.createElement('img');
             img.src = flag.imageUrl;
@@ -38,12 +40,13 @@ window.onload = function() {
     }
 
     // Initial population of the flags menu
-    addFlagsToMenu();
+    let shuffledFlags = shuffleArray(flagsData);
+    addFlagsToMenu(shuffledFlags);
 
     // Randomize flags when the button is clicked
     randomizeButton.onclick = function() {
-        shuffleArray(flagsData);
-        addFlagsToMenu();
+        shuffledFlags = shuffleArray(flagsData);
+        addFlagsToMenu(shuffledFlags);
     };
 
     // Show country name when the main flag is clicked
