@@ -27,6 +27,7 @@ window.onload = function() {
             img.style.border = '2px solid black'; 
             img.onclick = function() {
                 mainFlag.src = flag.imageUrl;
+                mainFlag.alt = flag.name; 
                 countryName.textContent = "Click flag to reveal";
             };
             li.appendChild(img);
