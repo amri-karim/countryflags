@@ -8,6 +8,7 @@ function shuffleArray(array) {
 window.onload = function() {
     const flagsList = document.getElementById('flags-list');
     const mainFlag = document.getElementById('main-flag');
+    const favIcon = document.getElementById('favicon');
     const countryName = document.getElementById('country-name');
     const randomizeButton = document.getElementById('randomize-button');
 
@@ -28,6 +29,7 @@ window.onload = function() {
             img.onclick = function() {
                 mainFlag.src = flag.imageUrl;
                 mainFlag.alt = flag.name; 
+                favIcon.href = flag.imageUrl;
                 countryName.textContent = "Click flag to reveal";
             };
             li.appendChild(img);
@@ -54,5 +56,6 @@ window.onload = function() {
     const randomFlag = flagsData[randomIndex];
     mainFlag.src = randomFlag.imageUrl;
     mainFlag.alt = randomFlag.name;
+    favIcon.href = randomFlag.imageUrl;
     countryName.textContent = "Click flag to reveal";
 };
