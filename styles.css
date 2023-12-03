@@ -1,0 +1,32 @@
+#menu {
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    overflow: auto;
+}
+
+#main-display {
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+}
+
+#main-flag {
+    border: 2px solid black; /* Adjust as needed */
+}
+
+#country-name {
+    font-size: 4em;
+}
+
+#flags-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#flags-list li {
+    cursor: pointer;
+}
