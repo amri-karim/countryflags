@@ -1,21 +1,38 @@
 #menu {
     position: absolute;
-    width: 200px;
-    height: 100%;
+    width: 100%; /* Full width on small screens */
+    height: 50vh; /* Half height on small screens */
     overflow: auto;
 }
 
 #main-display {
-    margin-left: 200px;
+    margin-top: 50vh; /* Push down main display on small screens */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 50px);
+    height: 50vh; /* Half height on small screens */
     flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+    /* Styles for screens wider than 600px */
+    #menu {
+        width: 200px;
+        height: 100%;
+    }
+
+    #main-display {
+        margin-top: 0;
+        margin-left: 200px;
+        height: calc(100vh - 50px);
+    }
 }
 
 #main-flag {
     border: 2px solid black; /* Adjust as needed */
+    max-width: 100%; 
+    height: auto; 
+    margin-left: 10px;
 }
 
 #country-name {
